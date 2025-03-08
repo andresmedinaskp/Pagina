@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollador de Software a la Medida</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Carlos Andres Camayo Medina</h1>
+            <p>Desarrollador de Software a la Medida</p>
+            <nav>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>Transformando ideas en software</h2>
+            <p>Desarrollo soluciones personalizadas para tus necesidades.</p>
+            <a href="#portafolio" class="btn">Ver Portafolio</a>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <p>
+                    Soy un desarrollador de software con experiencia en la creación de aplicaciones web, móviles y de escritorio a la
+                    medida. Me especializo en tecnologías modernas como JavaScript, React, Node.js y más.
+                </p>
+                <p>
+                    Mi objetivo es ofrecer soluciones eficientes y escalables que se adapten a las necesidades de mis
+                    clientes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Servicios</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web modernos y responsivos.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Desarrollo Móvil</h3>
+                    <p>Aplicaciones móviles para iOS y Android.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Software Personalizado</h3>
+                    <p>Soluciones a medida para tu negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Portafolio -->
+    <section id="portafolio" class="portfolio">
+        <div class="container">
+            <h2>Portafolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="assets/gestor_permisos.png" alt="Proyecto 1">
+                    <img src="assets/gestor_permisos1.png" alt="Proyecto 1">
+                    <h3>Gestor de permisos</h3>
+                    <p>
+                        Este aplicativo es una herramienta diseñada para gestionar y controlar los permisos de los
+                        usuarios en una base de datos Firebird. Su función principal es permitir a los administradores
+                        de bases de datos asignar y administrar quién puede acceder a qué datos y qué acciones pueden
+                        realizar dentro de la base de datos.
+                    </p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="assets/pegar_json.png" alt="Proyecto 2">
+                    <h3>Consolidación y Unificación de Archivos JSON</h3>
+                    <p>
+                        Este proyecto ofrece una solución eficiente para consolidar múltiples archivos JSON en uno solo,
+                        respetando y manteniendo la estructura definida en los datos originales. Permite combinar de
+                        manera automática y ordenada archivos JSON provenientes de diferentes fuentes, sin perder la
+                        integridad de la información y asegurando que la estructura de los datos se preserve a lo largo
+                        del proceso.
+
+                        La herramienta es capaz de gestionar archivos con estructuras complejas y jerárquicas,
+                        unificando los datos sin generar conflictos ni duplicados. Además, ofrece opciones para
+                        personalizar el proceso de consolidación, permitiendo definir cómo deben combinarse los
+                        diferentes elementos de los archivos, todo de manera sencilla y eficiente.
+                    </p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="assets/Namuiwan.jpeg" alt="Proyecto 3">
+                    <h3>MisakLingua App</h3>
+                    <p>
+                        MisakLingua es una aplicación educativa diseñada especialmente para niños de la comunidad Misak,
+                        con el objetivo de enseñarles su idioma natal de manera divertida y efectiva, al mismo tiempo
+                        que refuerza el aprendizaje del español. A través de una serie de juegos interactivos, lecciones
+                        visuales y actividades prácticas, los niños podrán aprender y practicar tanto el Misak como el
+                        español de forma paralela.
+
+                        La app está diseñada para respetar y promover la riqueza cultural y lingüística de la comunidad
+                        Misak, ofreciendo contenidos adaptados a su contexto, valores y tradiciones. Con MisakLingua,
+                        los niños podrán mejorar su comprensión y expresión en ambos idiomas, favoreciendo el desarrollo
+                        de habilidades lingüísticas, cognitivas y sociales en un entorno amigable y accesible.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Carlos Andres Camayo Medina. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para interactividad -->
+    <script src="script.js"></script>
+</body>
+
+</html>
