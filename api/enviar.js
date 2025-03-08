@@ -2,7 +2,12 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { name, email, message } = req.body;
+        const { name, email, phone, message } = req.body;
+
+        // Validación básica de los campos
+        if (!name || !email || !message) {
+            return res.status(400).json({ error: 'Nombre, correo y mensaje son obligatorios' });
+        }
 
         // Configura el transporte de correo
         const transporter = nodemailer.createTransport({
@@ -18,7 +23,7 @@ export default async function handler(req, res) {
             from: email, // Correo del remitente
             to: process.env.EMAIL_USER, // Correo del destinatario (tú)
             subject: `Nuevo mensaje de ${name}`, // Asunto del correo
-            text: `Nombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`, // Cuerpo del correo
+            text: `Nombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`, // Cuerpo del correo
         };
 
         try {
@@ -27,7 +32,7 @@ export default async function handler(req, res) {
             // Respuesta clara y concisa
             res.status(200).json({ message: 'Correo enviado con éxito' });
         } catch (error) {
-            console.error(error);
+            console.error('Error al enviar el correo:', error);
             // Respuesta de error clara
             res.status(500).json({ error: 'Error al enviar el correo' });
         }
