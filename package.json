@@ -1,0 +1,23 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresmedinaskp/Pagina.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresmedinaskp/Pagina/issues"
+  },
+  "homepage": "https://github.com/andresmedinaskp/Pagina#readme",
+  "description": "",
+  "dependencies": {
+    "nodemailer": "^6.10.0"
+  }
+}

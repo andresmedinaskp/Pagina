@@ -1,1 +1,13 @@
+# Ignorar la carpeta node_modules
+node_modules/
+
+# Ignorar archivos de entorno
 .env.local
+.env.development
+.env.production
+
+# Ignorar archivos generados por Vercel
+.vercel/
+
+# Ignorar archivos de sistema
+.DS_Store
