@@ -136,13 +136,40 @@
     <section id="contacto" class="contact">
         <div class="container">
             <h2>Contacto</h2>
-            <form action="enviar.php" method="POST">
+            <form id="contactForm">
                 <input type="text" name="name" placeholder="Nombre" required>
                 <input type="email" name="email" placeholder="Correo electrónico" required>
                 <textarea name="message" placeholder="Mensaje" required></textarea>
                 <button type="submit" class="btn">Enviar</button>
             </form>
-            <script src="https://www.google.com/recaptcha/api.js"></script>
+            
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', async (e) => {
+                    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+            
+                    const formData = new FormData(e.target);
+                    const data = Object.fromEntries(formData.entries());
+            
+                    try {
+                        const response = await fetch('/api/enviar', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        });
+            
+                        const result = await response.json();
+                        if (response.ok) {
+                            alert(result.message); // Mensaje de éxito
+                        } else {
+                            alert(result.error); // Mensaje de error
+                        }
+                    } catch (error) {
+                        alert('Error al enviar el mensaje');
+                    }
+                });
+            </script>
         </div>
     </section>
 
