@@ -1,26 +1,24 @@
-// Importa Nodemailer para enviar correos
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-    // Solo permite solicitudes POST
     if (req.method === 'POST') {
         const { name, email, message } = req.body;
 
-        // Configura el transporte de correo (usa Gmail como ejemplo)
+        // Configura el transporte de correo
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: process.env.EMAIL_USER, // Usa variables de entorno
-                pass: process.env.EMAIL_PASS, // Usa variables de entorno
+                user: process.env.EMAIL_USER, // Usa la variable de entorno
+                pass: process.env.EMAIL_PASSWORD, // Usa la variable de entorno
             },
         });
 
         // Configura el correo
         const mailOptions = {
-            from: email,
-            to: process.env.EMAIL_USER, // Envía el correo a tu dirección
-            subject: `Nuevo mensaje de ${name}`,
-            text: message,
+            from: email, // Correo del remitente
+            to: process.env.EMAIL_USER, // Correo del destinatario (tú)
+            subject: `Nuevo mensaje de ${name}`, // Asunto del correo
+            text: `Nombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`, // Cuerpo del correo
         };
 
         try {

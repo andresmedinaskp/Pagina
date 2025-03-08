@@ -97,7 +97,7 @@
                     </p>
                 </div>
                 <div class="portfolio-item">
-                    <img src="../assets/pegar_json.png" alt="Proyecto 2">
+                    <img src="assets/pegar_json.png" alt="Proyecto 2">
                     <h3>Consolidación y Unificación de Archivos JSON</h3>
                     <p>
                         Este proyecto ofrece una solución eficiente para consolidar múltiples archivos JSON en uno solo,
@@ -141,11 +141,18 @@
                 <input type="email" name="email" placeholder="Correo electrónico" required>
                 <textarea name="message" placeholder="Mensaje" required></textarea>
                 <button type="submit" class="btn">Enviar</button>
+                <div id="loading" style="display: none;">Enviando mensaje...</div>
             </form>
             
             <script>
                 document.getElementById('contactForm').addEventListener('submit', async (e) => {
-                    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+                    e.preventDefault();
+            
+                    const submitButton = e.target.querySelector('button[type="submit"]');
+                    const loadingMessage = document.getElementById('loading');
+            
+                    submitButton.disabled = true;
+                    loadingMessage.style.display = 'block'; // Muestra el mensaje de carga
             
                     const formData = new FormData(e.target);
                     const data = Object.fromEntries(formData.entries());
@@ -161,12 +168,16 @@
             
                         const result = await response.json();
                         if (response.ok) {
-                            alert(result.message); // Mensaje de éxito
+                            alert(result.message);
+                            e.target.reset();
                         } else {
-                            alert(result.error); // Mensaje de error
+                            alert(result.error);
                         }
                     } catch (error) {
                         alert('Error al enviar el mensaje');
+                    } finally {
+                        submitButton.disabled = false;
+                        loadingMessage.style.display = 'none'; // Oculta el mensaje de carga
                     }
                 });
             </script>
@@ -186,6 +197,7 @@
     </footer>
 
     <!-- Script para interactividad -->
+     <!-- vercel dev para correr codigo en local -->
     <script src="script.js"></script>
 </body>
 
