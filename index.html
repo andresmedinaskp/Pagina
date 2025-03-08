@@ -8,9 +8,11 @@
     <link rel="icon" type="image/x-icon" href="/assets/softwart.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -57,7 +59,8 @@
             <h2>Sobre Mí</h2>
             <div class="about-content">
                 <p>
-                    Soy un desarrollador de software con experiencia en la creación de aplicaciones web, móviles y de escritorio a la
+                    Soy un desarrollador de software con experiencia en la creación de aplicaciones web, móviles y de
+                    escritorio a la
                     medida. Me especializo en tecnologías modernas como JavaScript, React, Node.js y más.
                 </p>
                 <p>
@@ -140,6 +143,43 @@
                         de habilidades lingüísticas, cognitivas y sociales en un entorno amigable y accesible.
                     </p>
                 </div>
+                <div class="portfolio-item">
+                    <img src="assets/biblioteca.png" alt="Proyecto 4">
+                    <p></p>
+                    <img src="assets/biblioteca1.png" alt="Proyecto 4">
+                    <h3>biblioteca Web</h3>
+                    <p>
+                        El proyecto Biblioteca Web Misak es una plataforma digital innovadora creada con el propósito de
+                        preservar, gestionar y difundir el rico patrimonio cultural del pueblo Misak. Esta biblioteca
+                        centralizada se presenta como una herramienta esencial para la población Misak, proporcionando
+                        acceso a una amplia gama de contenidos relacionados con su historia, tradiciones, saberes
+                        ancestrales, y conocimiento contemporáneo.
+
+                        El sistema está diseñado para facilitar la gestión de contenido digital de manera eficiente,
+                        permitiendo a los administradores cargar, organizar y actualizar información cultural, literaria
+                        y educativa de forma sencilla. Además, la plataforma ofrece funcionalidades avanzadas para la
+                        generación de reportes y estadísticas, lo que permite a los encargados de la biblioteca obtener
+                        información detallada sobre el uso y la interacción con los recursos disponibles, promoviendo
+                        una toma de decisiones más informada.
+                    </p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="assets/Inventario.png" alt="Proyecto 5">
+                    <h3>Sistema de Inventario y Ventas</h3>
+                    <p>
+                        El Sistema Integral de Inventario y Ventas es una solución avanzada diseñada para gestionar de
+                        manera eficiente tanto el inventario de productos como el proceso de ventas dentro de una
+                        organización. Este proyecto permite a las empresas controlar su inventario en tiempo real,
+                        registrar transacciones de ventas, y generar reportes detallados que faciliten la toma de
+                        decisiones estratégicas y operativas.
+
+                        Gestión de Inventario: El sistema permite un control exhaustivo del inventario, incluyendo la
+                        entrada y salida de productos, el seguimiento de niveles de stock, la gestión de proveedores y
+                        la identificación de productos en tiempo real. Los usuarios pueden realizar ajustes rápidos,
+                        generar alertas automáticas cuando los niveles de inventario sean bajos o productos próximos a
+                        caducar, asegurando una gestión eficiente y sin errores.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -180,34 +220,34 @@
         const modal = document.getElementById('successModal');
         const modalMessage = document.getElementById('modalMessage');
         const closeModal = document.getElementById('closeModal');
-    
+
         function showModal(message) {
             modalMessage.textContent = message;
             modal.style.display = 'block';
         }
-    
+
         closeModal.onclick = function () {
             modal.style.display = 'none';
         };
-    
+
         window.onclick = function (event) {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
         };
-    
+
         // Manejo del formulario
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const submitButton = e.target.querySelector('button[type="submit"]');
             const loadingMessage = document.getElementById('loading');
-    
+
             submitButton.disabled = true;
             loadingMessage.style.display = 'block';
-    
+
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
-    
+
             try {
                 const response = await fetch('/api/enviar', {
                     method: 'POST',
@@ -216,7 +256,7 @@
                     },
                     body: JSON.stringify(data),
                 });
-    
+
                 const result = await response.json();
                 if (response.ok) {
                     showModal(result.message); // Muestra el modal con el mensaje de éxito
