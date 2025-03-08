@@ -16,27 +16,3 @@ window.addEventListener('scroll', () => {
         header.style.backgroundColor = '#333'; // Restaura el color original
     }
 });
-// Selecciona los elementos del carrusel
-const portfolioGrid = document.querySelector('.portfolio-grid');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-
-// Define el ancho de cada card y el espacio entre ellas
-const cardWidth = 300; // Ancho de cada card
-const gap = 20; // Espacio entre las cards
-
-// Función para mover el carrusel a la izquierda
-leftArrow.addEventListener('click', () => {
-    portfolioGrid.scrollBy({
-        left: -(cardWidth + gap), // Mueve el carrusel a la izquierda
-        behavior: 'smooth' // Desplazamiento suave
-    });
-});
-
-// Función para mover el carrusel a la derecha
-rightArrow.addEventListener('click', () => {
-    portfolioGrid.scrollBy({
-        left: cardWidth + gap, // Mueve el carrusel a la derecha
-        behavior: 'smooth' // Desplazamiento suave
-    });
-});
