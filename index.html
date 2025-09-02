@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>devstudioskp</title>
+    <title>DevTools - Desarrollo de Software a la Medida</title>
     <link rel="icon" type="image/x-icon" href="/assets/softwart.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2"
-        as="font" type="font/woff2" crossorigin="anonymous">
-
 </head>
-
 <body>
     <!-- Modal para mensajes -->
     <div id="successModal" class="modal">
         <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
             <p id="modalMessage"></p>
-            <button id="closeModal">Aceptar</button>
+            <button id="closeModal" class="btn-modal">Aceptar</button>
         </div>
     </div>
 
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container">
-            <h1>DevTools</h1>
-            <p>Desarrollo de Software a la Medida</p>
+            <div class="logo">
+                <h1>DevTools</h1>
+                <span>Desarrollo de Software a la Medida</span>
+            </div>
             <nav>
                 <button class="menu-toggle" aria-label="Abrir menú">
-                    <i class="fas fa-bars"></i>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#portafolio">Portafolio</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#portafolio" class="nav-link">Portafolio</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,27 +46,75 @@
 
     <!-- Sección Inicio -->
     <section id="inicio" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles" id="particles-js"></div>
+        </div>
         <div class="container">
-            <h2>Transformando ideas en software</h2>
-            <p>Desarrollo soluciones personalizadas para tus necesidades.</p>
-            <a href="#portafolio" class="btn">Ver Portafolio</a>
+            <div class="hero-content">
+                <h2>Transformando ideas en <span class="text-highlight">software</span></h2>
+                <p>Desarrollo soluciones personalizadas para tus necesidades tecnológicas</p>
+                <div class="hero-buttons">
+                    <a href="#portafolio" class="btn btn-primary">Ver Portafolio</a>
+                    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-animation">
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line"></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Sección Sobre Mí -->
     <section id="sobre-mi" class="about">
         <div class="container">
-            <h2>Sobre Mí</h2>
+            <h2 class="section-title">Sobre Mí</h2>
             <div class="about-content">
-                <p>
-                    Soy un desarrollador de software con experiencia en la creación de aplicaciones web, móviles y de
-                    escritorio a la
-                    medida. Me especializo en tecnologías modernas como JavaScript, React, Node.js y más.
-                </p>
-                <p>
-                    Mi objetivo es ofrecer soluciones eficientes y escalables que se adapten a las necesidades de mis
-                    clientes.
-                </p>
+                <div class="about-text">
+                    <p>
+                        Soy un desarrollador de software con experiencia en la creación de aplicaciones web, móviles y de
+                        escritorio a la medida. Me especializo en tecnologías modernas como JavaScript, React, Node.js y más.
+                    </p>
+                    <p>
+                        Mi objetivo es ofrecer soluciones eficientes y escalables que se adapten a las necesidades de mis
+                        clientes, utilizando las mejores prácticas de desarrollo y metodologías ágiles.
+                    </p>
+                    <div class="skills">
+                        <div class="skill">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Bases de Datos</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -74,22 +122,43 @@
     <!-- Sección Servicios -->
     <section id="servicios" class="services">
         <div class="container">
-            <h2>Servicios</h2>
-            <div class="service-list">
-                <div class="service-item">
-                    <i class="fas fa-laptop-code"></i>
+            <h2 class="section-title">Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
                     <h3>Desarrollo Web</h3>
-                    <p>Creación de sitios web modernos y responsivos.</p>
+                    <p>Creación de sitios web modernos, responsivos y optimizados para todos los dispositivos.</p>
+                    <ul class="service-features">
+                        <li>Frontend y Backend</li>
+                        <li>Responsive Design</li>
+                        <li>Optimización SEO</li>
+                    </ul>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-mobile-alt"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
                     <h3>Desarrollo Móvil</h3>
-                    <p>Aplicaciones móviles para iOS y Android.</p>
+                    <p>Aplicaciones móviles nativas e híbridas para iOS y Android con excelente UX.</p>
+                    <ul class="service-features">
+                        <li>iOS y Android</li>
+                        <li>Apps Nativas/Híbridas</li>
+                        <li>Publicación en Stores</li>
+                    </ul>
                 </div>
-                <div class="service-item">
-                    <i class="fas fa-cogs"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
                     <h3>Software Personalizado</h3>
-                    <p>Soluciones a medida para tu negocio.</p>
+                    <p>Soluciones a medida para tu negocio que se adaptan a tus procesos específicos.</p>
+                    <ul class="service-features">
+                        <li>Análisis de Requerimientos</li>
+                        <li>Desarrollo Custom</li>
+                        <li>Soporte y Mantenimiento</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -98,85 +167,113 @@
     <!-- Sección Portafolio -->
     <section id="portafolio" class="portfolio">
         <div class="container">
-            <h2>Portafolio</h2>
+            <h2 class="section-title">Portafolio</h2>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Móvil</button>
+                <button class="filter-btn" data-filter="desktop">Desktop</button>
+            </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="assets/gestor_permisos.png" alt="Proyecto 1">
-                    <img src="assets/gestor_permisos1.png" alt="Proyecto 1">
-                    <h3>Gestor de permisos</h3>
-                    <p>
-                        Este aplicativo es una herramienta diseñada para gestionar y controlar los permisos de los
-                        usuarios en una base de datos Firebird. Su función principal es permitir a los administradores
-                        de bases de datos asignar y administrar quién puede acceder a qué datos y qué acciones pueden
-                        realizar dentro de la base de datos.
-                    </p>
+                <div class="portfolio-item" data-category="desktop">
+                    <div class="portfolio-image">
+                        <img src="assets/gestor_permisos.png" alt="Gestor de permisos">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Visitar sitio"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Gestor de permisos</h3>
+                        <p>Herramienta para gestionar y controlar permisos de usuarios en bases de datos Firebird.</p>
+                        <div class="portfolio-tags">
+                            <span>Firebird</span>
+                            <span>Delphi</span>
+                            <span>Base de datos</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="assets/pegar_json.png" alt="Proyecto 2">
-                    <h3>Consolidación y Unificación de Archivos JSON RIPS Resolución 2275</h3>
-                    <p>
-                        Este proyecto ofrece una solución eficiente para consolidar múltiples archivos JSON en uno solo,
-                        respetando y manteniendo la estructura definida en los datos originales. Permite combinar de
-                        manera automática y ordenada archivos JSON provenientes de diferentes fuentes, sin perder la
-                        integridad de la información y asegurando que la estructura de los datos se preserve a lo largo
-                        del proceso.
-
-                        La herramienta es capaz de gestionar archivos con estructuras complejas y jerárquicas,
-                        unificando los datos sin generar conflictos ni duplicados. Además, ofrece opciones para
-                        personalizar el proceso de consolidación, permitiendo definir cómo deben combinarse los
-                        diferentes elementos de los archivos, todo de manera sencilla y eficiente.
-                    </p>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="assets/pegar_json.png" alt="Consolidador JSON">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Visitar sitio"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Consolidador JSON RIPS</h3>
+                        <p>Solución para consolidar múltiples archivos JSON respetando la estructura definida.</p>
+                        <div class="portfolio-tags">
+                            <span>JavaScript</span>
+                            <span>JSON</span>
+                            <span>RIPS</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="assets/Namuiwan1.jpg" alt="Proyecto 3">
-                    <h3>MisakLingua App</h3>
-                    <p>
-                        MisakLingua es una aplicación educativa diseñada especialmente para niños de la comunidad Misak,
-                        con el objetivo de enseñarles su idioma natal de manera divertida y efectiva, al mismo tiempo
-                        que refuerza el aprendizaje del español. A través de una serie de juegos interactivos, lecciones
-                        visuales y actividades prácticas, los niños podrán aprender y practicar tanto el Misak como el
-                        español de forma paralela.
-
-                        La app está diseñada para respetar y promover la riqueza cultural y lingüística de la comunidad
-                        Misak, ofreciendo contenidos adaptados a su contexto, valores y tradiciones. Con MisakLingua,
-                        los niños podrán mejorar su comprensión y expresión en ambos idiomas, favoreciendo el desarrollo
-                        de habilidades lingüísticas, cognitivas y sociales en un entorno amigable y accesible.
-                    </p>
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-image">
+                        <img src="assets/Namuiwan1.jpg" alt="MisakLingua App">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Visitar sitio"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>MisakLingua App</h3>
+                        <p>Aplicación educativa para enseñar el idioma Misak y español a niños de la comunidad.</p>
+                        <div class="portfolio-tags">
+                            <span>React Native</span>
+                            <span>Educación</span>
+                            <span>Multilenguaje</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="assets/biblioteca.png" alt="Proyecto 4">
-                    <p></p>
-                    <img src="assets/biblioteca1.png" alt="Proyecto 4">
-                    <h3>biblioteca Web</h3>
-                    <p>
-                        El proyecto Biblioteca Web Misak es una plataforma digital innovadora creada con el propósito de
-                        preservar, gestionar y difundir el rico patrimonio cultural del pueblo Misak. Esta biblioteca
-                        centralizada se presenta como una herramienta esencial para la población Misak, proporcionando
-                        acceso a una amplia gama de contenidos relacionados con su historia, tradiciones, saberes
-                        ancestrales, y conocimiento contemporáneo.
-
-                        El sistema está diseñado para facilitar la gestión de contenido digital de manera eficiente,
-                        permitiendo a los administradores cargar, organizar y actualizar información cultural, literaria
-                        y educativa de forma sencilla. Además, la plataforma ofrece funcionalidades avanzadas para la
-                        generación de reportes y estadísticas.
-                    </p>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="assets/biblioteca.png" alt="Biblioteca Web">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Visitar sitio"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Biblioteca Web Misak</h3>
+                        <p>Plataforma digital para preservar y difundir el patrimonio cultural del pueblo Misak.</p>
+                        <div class="portfolio-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Cultural</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="assets/Inventario.png" alt="Proyecto 5">
-                    <h3>Sistema de Inventario y Ventas</h3>
-                    <p>
-                        El Sistema Integral de Inventario y Ventas es una solución avanzada diseñada para gestionar de
-                        manera eficiente tanto el inventario de productos como el proceso de ventas dentro de una
-                        organización. Este proyecto permite a las empresas controlar su inventario en tiempo real,
-                        registrar transacciones de ventas, y generar reportes detallados que faciliten la toma de
-                        decisiones estratégicas y operativas.
-
-                        Gestión de Inventario: El sistema permite un control exhaustivo del inventario, incluyendo la
-                        entrada y salida de productos, el seguimiento de niveles de stock, la gestión de proveedores y
-                        la identificación de productos en tiempo real. Los usuarios pueden realizar ajustes rápidos,
-                        generar alertas automáticas cuando los niveles de inventario sean bajos o productos próximos a
-                        caducar, asegurando una gestión eficiente y sin errores.
-                    </p>
+                <div class="portfolio-item" data-category="desktop">
+                    <div class="portfolio-image">
+                        <img src="assets/Inventario.png" alt="Sistema de Inventario">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Visitar sitio"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Sistema de Inventario</h3>
+                        <p>Sistema integral para gestión de inventario y ventas con control en tiempo real.</p>
+                        <div class="portfolio-tags">
+                            <span>Java</span>
+                            <span>PostgreSQL</span>
+                            <span>Inventario</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,91 +282,113 @@
     <!-- Sección Contacto -->
     <section id="contacto" class="contact">
         <div class="container">
-            <h2>Contacto</h2>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <input type="tel" name="phone" placeholder="Teléfono de contacto" required>
-                <textarea name="message" placeholder="Mensaje" required></textarea>
-                <button type="submit" class="btn">Enviar</button>
-                <div id="loading" style="display: none;">Enviando mensaje...</div>
-            </form>
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¿Tienes un proyecto en mente?</h3>
+                    <p>Estoy disponible para trabajar en tus proyectos. Contáctame y hablemos sobre cómo puedo ayudarte.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>carlos.camayo@devtools.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Teléfono</h4>
+                                <p>+57 301 690 0750</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Ubicación</h4>
+                                <p>Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/573016900750" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nombre completo" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Correo electrónico" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Teléfono de contacto" required>
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Enviar mensaje</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Enviando...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Carlos Andres Camayo Medina. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <!-- Ícono de WhatsApp -->
-                <a href="https://wa.me/573016900750" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>DevTools</h3>
+                    <p>Desarrollo de Software a la Medida</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre mí</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/573016900750" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Carlos Andres Camayo Medina. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Manejo del modal
-        const modal = document.getElementById('successModal');
-        const modalMessage = document.getElementById('modalMessage');
-        const closeModal = document.getElementById('closeModal');
-
-        function showModal(message) {
-            modalMessage.textContent = message;
-            modal.style.display = 'block';
-        }
-
-        closeModal.onclick = function () {
-            modal.style.display = 'none';
-        };
-
-        window.onclick = function (event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        };
-
-        // Manejo del formulario
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitButton = e.target.querySelector('button[type="submit"]');
-            const loadingMessage = document.getElementById('loading');
-
-            submitButton.disabled = true;
-            loadingMessage.style.display = 'block';
-
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
-
-            try {
-                const response = await fetch('/api/enviar', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
-
-                const result = await response.json();
-                if (response.ok) {
-                    showModal(result.message); // Muestra el modal con el mensaje de éxito
-                    e.target.reset();
-                } else {
-                    showModal(result.error); // Muestra el modal con el mensaje de error
-                }
-            } catch (error) {
-                showModal('Error al enviar el mensaje'); // Muestra el modal con un mensaje genérico
-            } finally {
-                submitButton.disabled = false;
-                loadingMessage.style.display = 'none';
-            }
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
