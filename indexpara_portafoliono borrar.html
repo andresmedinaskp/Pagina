@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Académico | Carlos Andrés Camayo</title>
+    <link rel="icon" type="image/x-icon" href="/assets/softwart.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .text-highlight {
+            color: #ffd700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skills {
+            margin-top: 2rem;
+        }
+
+        .skill {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .skill-progress {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: var(--light-bg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Portfolio Section */
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag.academic {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .project-tag.personal {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .portfolio-tags span {
+            background: var(--light-bg);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--light-bg);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-details {
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .disclaimer {
+            background: #fffbeb;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            color: #22c55e;
+            margin-bottom: 1rem;
+        }
+
+        .btn-modal {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal para mensajes -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <p id="modalMessage">¡Mensaje enviado con éxito!</p>
+            <button id="closeModal" class="btn-modal">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Mi Portafolio</h1>
+                <span>Proyectos Académicos y Personales</span>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Exploración y Aprendizaje en <span class="text-highlight">Desarrollo de Software</span></h2>
+                <p>Este es un espacio donde exhibo mis proyectos académicos y personales como parte de mi formación profesional.</p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contacto" class="btn btn-secondary">Ver GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Soy un desarrollador en formación, actualmente enfocado en expandir mis conocimientos a través de 
+                        proyectos académicos y personales. Mi interés principal está en el desarrollo de software y la 
+                        resolución de problemas mediante tecnología.
+                    </p>
+                    <p>
+                        Este portafolio documenta mi journey de aprendizaje y práctica en tecnologías modernas como 
+                        JavaScript, React, Node.js y otras herramientas que he ido explorando durante mi formación.
+                    </p>
+                    <div class="skills">
+                        <div class="skill">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>Bases de Datos</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Habilidades -->
+    <section id="habilidades" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Lenguajes & Frameworks</h3>
+                    <ul>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React / React Native</li>
+                        <li>Node.js</li>
+                        <li>Java</li>
+                        <li>PHP</li>
+                        <li>Delphi</li>
+                        <li>HTML5 & CSS3</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Bases de Datos</h3>
+                    <ul>
+                        <li>Firebird</li>
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>Diseño de Esquemas</li>
+                        <li>Consultas SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Herramientas & Métodos</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>Metodologías Ágiles</li>
+                        <li>Resolución de Problemas</li>
+                        <li>Diseño UI/UX</li>
+                        <li>Testing</li>
+                        <li>Debugging</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Mis Proyectos</h2>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Móvil</button>
+                <button class="filter-btn" data-filter="desktop">Desktop</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="desktop">
+                    <div class="portfolio-image">
+                        <div style="background: #4f46e5; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-database" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Ver código"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Gestor de Permisos</h3>
+                        <span class="project-tag academic">Proyecto Académico</span>
+                        <p>Herramienta desarrollada para gestionar y controlar permisos de usuarios en bases de datos Firebird.</p>
+                        <div class="portfolio-tags">
+                            <span>Firebird</span>
+                            <span>Delphi</span>
+                            <span>Base de datos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div style="background: #10b981; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-file-code" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Ver código"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Consolidador JSON RIPS</h3>
+                        <span class="project-tag personal">Proyecto Personal</span>
+                        <p>Solución personal para consolidar múltiples archivos JSON respetando la estructura definida para el estándar RIPS.</p>
+                        <div class="portfolio-tags">
+                            <span>JavaScript</span>
+                            <span>JSON</span>
+                            <span>RIPS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-image">
+                        <div style="background: #f59e0b; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-mobile-alt" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Ver código"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>MisakLingua App</h3>
+                        <span class="project-tag academic">Proyecto Académico</span>
+                        <p>Aplicación educativa desarrollada como proyecto para enseñar el idioma Misak y español a niños de la comunidad.</p>
+                        <div class="portfolio-tags">
+                            <span>React Native</span>
+                            <span>Educación</span>
+                            <span>Multilenguaje</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <div style="background: #ef4444; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-book" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Ver código"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Biblioteca Web Misak</h3>
+                        <span class="project-tag academic">Proyecto Académico</span>
+                        <p>Plataforma digital para preservar y difundir el patrimonio cultural del pueblo Misak mediante recursos digitales.</p>
+                        <div class="portfolio-tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Cultural</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="desktop">
+                    <div class="portfolio-image">
+                        <div style="background: #8b5cf6; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                            <i class="fas fa-boxes" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="#" class="action-btn" title="Ver detalles"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn" title="Ver código"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Sistema de Inventario</h3>
+                        <span class="project-tag academic">Proyecto Académico</span>
+                        <p>Sistema integral para gestión de inventario y ventas con control en tiempo real y reportes automatizados.</p>
+                        <div class="portfolio-tags">
+                            <span>Java</span>
+                            <span>PostgreSQL</span>
+                            <span>Inventario</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¿Interesado en saber más?</h3>
+                    <p>Puedes contactarme si deseas más información sobre la metodología, tecnologías o aprendizajes de estos proyectos académicos.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>rips2275@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>GitHub</h4>
+                                <p>/tu-usuario-github</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Ubicación</h4>
+                                <p>Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <p class="disclaimer">
+                        <strong>Aclaración importante:</strong> Este es un portafolio académico y personal. 
+                        No soy un proveedor de servicios comerciales ni realizo trabajos freelance debido a 
+                        mis compromisos laborales actuales. Este formulario es solo para contacto profesional 
+                        y académico.
+                    </p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nombre completo" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Correo electrónico" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Asunto (Opcional)">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tu mensaje (Ej: Preguntas sobre un proyecto, colaboración en código abierto)" rows="5" required></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Enviar mensaje</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Enviando...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Mi Portafolio</h3>
+                    <p>Proyectos Académicos y Personales</p>
+                </div>
+                
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre mí</a></li>
+                        <li><a href="#habilidades">Habilidades</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Portafolio de Carlos Andres Camayo Medina. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navegación responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Animación de barras de habilidades
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width;
+            });
+
+            // Filtrado de portafolio
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+                    
+                    // Actualizar botones activos
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Filtrar items
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Formulario de contacto
+            const contactForm = document.getElementById('contactForm');
+            const modal = document.getElementById('successModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalMessage = document.getElementById('modalMessage');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = this.querySelector('.btn-text');
+                const loadingBtn = this.querySelector('.btn-loading');
+                
+                submitBtn.style.display = 'none';
+                loadingBtn.style.display = 'inline-block';
+                
+                // Simular envío
+                setTimeout(() => {
+                    modalMessage.textContent = '¡Mensaje recibido! Te responderé pronto.';
+                    modal.style.display = 'block';
+                    
+                    submitBtn.style.display = 'inline-block';
+                    loadingBtn.style.display = 'none';
+                    contactForm.reset();
+                }, 1500);
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
